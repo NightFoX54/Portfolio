@@ -1,6 +1,6 @@
 import axios from 'axios'
+const API_BASE_URL = 'https://berkay-portfolio.duckdns.org/api'
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://berkay-portfolio.duckdns.org/api'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
