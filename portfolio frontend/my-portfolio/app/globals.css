@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  /* Dark theme only for portfolio pages */
+  body.portfolio-theme {
+    @apply bg-black text-white;
+  }
+  
+  /* Custom scrollbar for portfolio theme */
+  body.portfolio-theme ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  body.portfolio-theme ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+  
+  body.portfolio-theme ::-webkit-scrollbar-thumb {
+    @apply bg-green-400/50 rounded;
+  }
+  
+  body.portfolio-theme ::-webkit-scrollbar-thumb:hover {
+    @apply bg-green-400/70;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700;
+}
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-900 hover:bg-gray-300;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+  }
+  
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md border border-gray-200;
+  }
+  
+  /* Prose styles for rich text content - ONLY for portfolio pages */
+  .portfolio-theme .prose {
+    @apply text-gray-300;
+  }
+  
+  .portfolio-theme .prose h1, 
+  .portfolio-theme .prose h2, 
+  .portfolio-theme .prose h3 {
+    @apply text-green-400 font-bold;
+  }
+  
+  .portfolio-theme .prose p {
+    @apply mb-4;
+  }
+  
+  .portfolio-theme .prose ul, 
+  .portfolio-theme .prose ol {
+    @apply mb-4 ml-6;
+  }
+  
+  .portfolio-theme .prose li {
+    @apply mb-2;
+  }
+  
+  .portfolio-theme .prose a {
+    @apply text-green-400 hover:text-green-300 underline;
+  }
+  
+  .portfolio-theme .prose strong {
+    @apply text-white font-bold;
+  }
+  
+  .portfolio-theme .prose em {
+    @apply italic;
+  }
+  
+  /* Admin panel specific styles - override any global styles */
+  .admin-panel {
+    background-color: #f9fafb !important;
+    color: #111827 !important;
+  }
+  
+  .admin-panel h1,
+  .admin-panel h2,
+  .admin-panel h3,
+  .admin-panel h4,
+  .admin-panel h5,
+  .admin-panel h6 {
+    color: #111827 !important;
+  }
+  
+  .admin-panel p {
+    color: #374151 !important;
+  }
+  
+  .admin-panel label {
+    color: #374151 !important;
+  }
+  
+  .admin-panel input:not([type="checkbox"]):not([type="radio"]),
+  .admin-panel textarea,
+  .admin-panel select {
+    color: #111827 !important;
+  }
+  
+  .admin-panel .input {
+    color: #111827 !important;
+  }
+  
+  .admin-panel .card {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+  }
+  
+  .admin-panel .card h1,
+  .admin-panel .card h2,
+  .admin-panel .card h3,
+  .admin-panel .card h4,
+  .admin-panel .card h5,
+  .admin-panel .card h6 {
+    color: #111827 !important;
+  }
+  
+  .admin-panel .card p,
+  .admin-panel .card span:not(.text-green-400):not(.text-primary-600):not(.text-red-600),
+  .admin-panel .card div:not(.text-green-400):not(.text-primary-600) {
+    color: #374151 !important;
+  }
+  
+  .admin-panel input::placeholder,
+  .admin-panel textarea::placeholder {
+    color: #9ca3af !important;
+  }
+  
+  .admin-panel button:not(.btn-primary):not(.btn-danger):not(.text-green-400):not(.text-primary-600) {
+    color: #374151 !important;
+  }
+  
+  /* Override any white text that might be inherited */
+  .admin-panel .text-white {
+    color: #111827 !important;
+  }
+  
+  /* Ensure text colors are properly set */
+  .admin-panel .text-gray-500 {
+    color: #6b7280 !important;
+  }
+  
+  .admin-panel .text-gray-600 {
+    color: #4b5563 !important;
+  }
+  
+  .admin-panel .text-gray-700 {
+    color: #374151 !important;
+  }
+  
+  .admin-panel .text-gray-900 {
+    color: #111827 !important;
+  }
+  
+  /* RichTextEditor in admin panel */
+  .admin-panel .rich-text-editor .ql-editor {
+    color: #111827 !important;
+  }
+  
+  .admin-panel .rich-text-editor .ql-editor.ql-blank::before {
+    color: #9ca3af !important;
+  }
+  
+  /* Ensure all admin panel content is visible */
+  .admin-panel table,
+  .admin-panel td,
+  .admin-panel th {
+    color: #111827 !important;
+  }
+}
